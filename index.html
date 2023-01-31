@@ -246,9 +246,6 @@
                 dataSol.solicitudes = [];
                 let value = solicitud;
                 let numericRegex = /^[0-9]+$/;
-                console.log('====================================');
-                console.log(resultFiler);
-                console.log('====================================');
                 if (numericRegex.test(value) && value.length == 8) {
                     try {
                         let listadototalsol = {};
@@ -283,6 +280,7 @@
                                 listadoSolicitudes = [...listadoSolicitudes, ...listadototalsol.solicitud[prop]];
                             }
                         }
+                        console.log(listadoSolicitudes)
                         if (JSON.stringify(listadoSolicitudes).includes(solicitud)) {
                             let filteredArr = listadoSolicitudes.filter(item => item.includes(solicitud));
                             dataSol.solicitudes.push(filteredArr[0])
